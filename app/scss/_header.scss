@@ -1,13 +1,14 @@
 .header{
 
     nav {
-        padding: 24px;
+        padding: 1.0625rem 1.5rem;
     }
 
     &__logo {
 
         img {
-
+            width: 8.8125rem;
+            height: 1.375rem;
         }
 
     }
@@ -21,8 +22,54 @@
             background-color: darkblue;
 
             &:not(:last-child){
-                margin-bottom: 5px;
+                margin-bottom: 3px;
             }
         }
     }
+
+    &__cta {
+        font-size: $font-small;
+        color: $white;
+        transition: opacity 300ms ease-in-out;
+
+        &:hover{
+            opacity: 0.75;
+        }
+    }
+
+    &__links {
+    
+        a {
+            position: relative;
+            color: darkgray;
+            font-size: $font-small;
+            transition: color 300ms ease-in-out;
+
+            &:not(:last-child) {
+                margin-right: 32px;
+            }
+            
+            &::before{
+                content: "";
+                position: absolute;
+                display: block;
+                height: 5px;
+                left: 0;
+                right: 0;
+                bottom: -30;
+                background: linear-gradient(to right, $limeGreen, $brightCyan);
+                opacity: 0;
+                transition: opacity 300ms ease-in-out;
+            }
+
+            &:hover{
+                color: $darkBlue;
+                &::before {
+                    opacity: 1;
+                }
+            }
+
+        }
+    }
+
 }
